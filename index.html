@@ -394,10 +394,10 @@ const hideTip=()=>tip.style.opacity=0;
 /* table */
 (function(){
   const t=document.getElementById('tbl');
-  const cols=[['name','joint',null],['servo','servo',null],['n','×',0],['peak','τ peak',2],
-    ['rms','τ RMS',3],['grav','gravity',3],['inert','inertial',3],['meas','measured',3],
-    ['Fpeak','|F| peak',1],['Mpeak','|M| peak',2],['cycles','cycles',0],
-    ['pct_stall','% stall',1],['case_c','case °C',1]];
+  const cols=[['name','joint',null],['servo','servo',null],['n','×',0],
+    ['rms','τ RMS',3],['peak','τ peak',2],['pct_stall','% stall',1],
+    ['grav','gravity',3],['inert','inertial',3],
+    ['Fpeak','|F| peak',1],['Mpeak','|M| peak',2],['cycles','cycles',0]];
   t.innerHTML='<thead><tr>'+cols.map(c=>`<th class="${c[2]===null?'':'num'}">${c[1]}</th>`).join('')+'</tr></thead><tbody>'+
     D.joints.map(j=>'<tr>'+cols.map(([k,,d])=>{const v=j[k];
       const s=d===null?v:(d===0?Number(v).toLocaleString():Number(v).toFixed(d));
